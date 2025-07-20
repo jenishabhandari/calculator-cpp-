@@ -1,19 +1,19 @@
-# calculator-cpp-
-# 🧮 Calculator in C++
+# 🧠 Advanced Calculator in C++
 
-A basic command-line calculator that performs:
-- Addition
-- Subtraction
-- Multiplication
-- Division
+A powerful terminal-based calculator with advanced operations like power, square root, and modulus — built using pure C++.
 
-## 📋 Features
-- Simple terminal interface
-- Handles invalid inputs (like divide by zero)
-- Continuous loop until user exits
+## 🚀 Features
+
+- Basic operations: `+`, `-`, `*`, `/`
+- **Modulus** (`%`) for integers
+- **Power** (x^y)
+- **Square root** (√x)
+- Menu-based interface with looping
+- Input validation & error handling
 
 ## 🧑‍💻 How to Run
 
 ```bash
 g++ calculator.cpp -o calculator
 ./calculator
+
