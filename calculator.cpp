@@ -1,52 +1,71 @@
 #include <iostream>
+#include <cmath> // for pow() and sqrt()
 using namespace std;
 
 int main() {
-    double num1, num2;
-    char op;
-    char choice;
+    double num1, num2, result;
+    int choice;
+    char again;
 
     do {
-        // Input
-        cout << "Enter first number: ";
-        cin >> num1;
-
-        cout << "Enter operator (+, -, *, /): ";
-        cin >> op;
-
-        cout << "Enter second number: ";
-        cin >> num2;
-
-        // Calculation
-        switch (op) {
-            case '+':
-                cout << "Result: " << num1 + num2 << endl;
-                break;
-            case '-':
-                cout << "Result: " << num1 - num2 << endl;
-                break;
-            case '*':
-                cout << "Result: " << num1 * num2 << endl;
-                break;
-            case '/':
-                if (num2 != 0)
-                    cout << "Result: " << num1 / num2 << endl;
-                else
-                    cout << "Error: Cannot divide by zero." << endl;
-                break;
-            default:
-                cout << "Invalid operator." << endl;
-        }
-
-        // Loop decision
-        cout << "Do you want to calculate again? (y/n): ";
+        // Menu display
+        cout << "======= ADVANCED CALCULATOR =======\n";
+        cout << "1. Addition (+)\n";
+        cout << "2. Subtraction (-)\n";
+        cout << "3. Multiplication (*)\n";
+        cout << "4. Division (/)\n";
+        cout << "5. Power (x^y)\n";
+        cout << "6. Square Root (√x)\n";
+        cout << "Enter your choice (1-6): ";
         cin >> choice;
 
-        cout << "--------------------------" << endl;
+        // Switch case for operation
+        switch (choice) {
+            case 1:
+                cout << "Enter two numbers: ";
+                cin >> num1 >> num2;
+                result = num1 + num2;
+                cout << "Result: " << result << endl;
+                break;
 
-    } while (choice == 'y' || choice == 'Y');
+            case 2:
+                cout << "Enter two numbers: ";
+                cin >> num1 >> num2;
+                result = num1 - num2;
+                cout << "Result: " << result << endl;
+                break;
 
-    cout << "Thank you for using the calculator! 💻" << endl;
+            case 3:
+                cout << "Enter two numbers: ";
+                cin >> num1 >> num2;
+                result = num1 * num2;
+                cout << "Result: " << result << endl;
+                break;
 
-    return 0;
-}
+            case 4:
+                cout << "Enter two numbers: ";
+                cin >> num1 >> num2;
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    cout << "Result: " << result << endl;
+                } else {
+                    cout << "Error: Cannot divide by zero!" << endl;
+                }
+                break;
+
+            case 5:
+                cout << "Enter base and exponent: ";
+                cin >> num1 >> num2;
+                result = pow(num1, num2);
+                cout << "Result: " << result << endl;
+                break;
+
+            case 6:
+                cout << "Enter a number: ";
+                cin >> num1;
+                if (num1 >= 0) {
+                    result = sqrt(num1);
+                    cout << "Result: " << result << endl;
+                } else {
+                    cout << "Error: Square root of a negative number is undefined!" << endl;
+
